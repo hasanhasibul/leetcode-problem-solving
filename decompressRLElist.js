@@ -1,12 +1,12 @@
 const decompressRLElist = function (nums) {
   const output = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[2 * i] && nums[2 * i + 1]) {
-      // console.log(nums[2 * i], nums[2 * i + 1]);
-      for (let k = 0; k < nums[2 * i]; k++) {
-        output.push(nums[2 * i + 1]);
-      }
+  for (let i = 0; i < nums.length; i += 2) {
+    let freq = nums[i];
+    const val = nums[i + 1];
+    while (freq !== 0) {
+      output.push(val);
+      freq--;
     }
   }
 
