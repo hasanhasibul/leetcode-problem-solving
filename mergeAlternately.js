@@ -9,7 +9,20 @@ const mergeAlternately = function (word1, word2) {
   return clone.join("");
 };
 
-const word1 = "abc";
-const word2 = "pqr";
+const word1 = "ab";
+const word2 = "pqrs";
 
-console.log(mergeAlternately(word1, word2));
+// console.log(mergeAlternately(word1, word2));
+
+/// alternative way to solve this problem
+
+let outputString = [];
+const alternativeStringMerge = (word1, word2) => {
+  const maxLen = word1.length > word2.length ? word1.length : word2.length;
+  for (let i = 0; i < maxLen; i++) {
+    outputString = outputString + ((word1[i] || "") + (word2[i] || ""));
+  }
+  return outputString;
+};
+
+alternativeStringMerge(word1, word2);
