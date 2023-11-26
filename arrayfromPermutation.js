@@ -1,5 +1,7 @@
 const buildArray = function (nums) {
-  const result = nums.map((item, i, array) => array[item]);
+  const result = nums.map((item, i, array) => {
+    console.log(array[item]);
+  });
   return result;
 };
 
