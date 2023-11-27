@@ -21,7 +21,14 @@ const countConsistentStrings = function (allowed, words) {
   }
   return output.filter((item) => item)?.length;
 };
+
+var countConsistentStrings2 = function (allowed, words) {
+  allowed = new Set(allowed);
+  return words.reduce((count, word) => {
+    return word.split("").every((l) => allowed.has(l)) ? ++count : count;
+  }, 0);
+};
 const allowed = "cad";
 const words = ["cc", "acd", "b", "ba", "bac", "bad", "ac", "d"];
 
-console.log(countConsistentStrings(allowed, words));
+console.log(countConsistentStrings2(allowed, words));
