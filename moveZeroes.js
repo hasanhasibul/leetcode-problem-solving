@@ -15,5 +15,18 @@ const moveZeroes = (nums) => {
   return nums;
 };
 
+//another methods
+// array distructure method
+const moveZeroes2 = function (nums) {
+  let j = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 0) {
+      j++;
+    } else {
+      [nums[i - j], nums[i]] = [nums[i], nums[i - j]];
+    }
+  }
+  return nums;
+};
 const nums = [0, 0, 1];
-console.log(moveZeroes(nums));
+console.log(moveZeroes2(nums));
